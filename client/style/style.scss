@@ -1,14 +1,47 @@
+@font-face {
+    font-family: handwriting;
+    src: url("handwriting.ttf");
+}
+
+@font-face {
+  font-family: typewriter;
+  src: url("typewriterLight.ttf");
+}
+
+.handwriting {
+  font-size: 54px;
+  font-family: handwriting;
+  text-indent: 2em;
+  color :#360000;
+  padding: 15px 20px;
+
+}
+
+.typewriter {
+  font-size: 14px;
+  font-family: typewriter;
+  text-indent: 0.5em;
+  color :#3B3B3B;
+  padding: 15px 20px;
+}
+
 .leaf {
   background-color: #FFF3E0;
   height: 650px;
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
+  background: no-repeat url("paper.png") 0 0;
+  background-repeat: repeat;
 }
 
 .shadow {
   -webkit-box-shadow: -3px 5px 3px 1px #A3A3A3;
   box-shadow:         -3px 5px 3px 1px #A3A3A3;
+}
+
+.leaf:focus {
+  outline: 0px solid transparent;;
 }
 
 .leaf:before, .leaf:after {
@@ -20,6 +53,8 @@
   z-index: -1;
   margin-left: 25%;
   margin-right: 25%;
+  padding: 15px 20px;
+
 }
 .leaf:before {
   background: #FFEFD6;
@@ -29,6 +64,8 @@
   transform: rotate(-2.5deg);
   margin-left: 25%;
   margin-right: 25%;
+  padding: 15px 20px;
+
 }
 .leaf:after {
   background: #FFEFD6;
@@ -36,12 +73,12 @@
   right: -10px;
   top: 1px;
   transform: rotate(1.4deg);
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 30%;
+  margin-right: 20%;
 }
 
 body {
-  background-color: #787269;
+  background-color: #736F6A;
 }
 /* Create the animation blocks */
 @keyframes spin {
@@ -51,94 +88,94 @@ body {
 
 @keyframes flicker {
 	from {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	4% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	6% {
-		opacity: 0.2;
+		opacity: 0.3;
 	}
 	8% {
-		opacity: 0.15;
+		opacity: 0.25;
 	}
 	10% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	11% {
-		opacity: 0.17;
+		opacity: 0.27;
 	}
 	12% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	14% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	16% {
-		opacity: 0.15;
+		opacity: 0.25;
 	}
 	17% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	19% {
-		opacity: 0.2;
+		opacity: 0.3;
 	}
 	20% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	24% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	26% {
-		opacity: 0.15;
+		opacity: 0.25;
 	}
 	28% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	38% {
-		opacity: 0.2;
+		opacity: 0.3;
 	}
 	40% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	42% {
-		opacity: 0.15;
+		opacity: 0.25;
 	}
 	44% {
-		opacity: 0.2;
+		opacity: 0.3;
 	}
 	46% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	56% {
-		opacity: 0.15;
+		opacity: 0.25;
 	}
 	58% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	60% {
-		opacity: 0.2;
+		opacity: 0.3;
 	}
 	68% {
-		opacity: 0.1;
-	}
-	70% {
-		opacity: .1; /*peak*/
-	}
-	72% {
-		opacity: 0.15;
-	}
-	93% {
 		opacity: 0.2;
 	}
+	70% {
+		opacity: .2; /*peak*/
+	}
+	72% {
+		opacity: 0.25;
+	}
+	93% {
+		opacity: 0.3;
+	}
 	95% {
-		opacity: .1; /*peak*/
+		opacity: .2; /*peak*/
 	}
 	97% {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 	to {
-		opacity: 0.15;
+		opacity: 0.25;
 	}
 }
 
@@ -150,6 +187,7 @@ body {
 	width: 1900px;
 	height: 1900px;
   opacity: 0.2;
+  pointer-events: none;
 
 	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #C47C00 0%, #C47C00 100%, red 95%);
 	background-image: -webkit-radial-gradient(45px 45px, circle cover, #C47C00, #C47C00);
@@ -159,5 +197,6 @@ body {
 	animation-duration: 6s; /* 3 seconds */
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
+  z-index: 50;
 
 }
