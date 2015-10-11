@@ -1,3 +1,3 @@
-Meteor.publish("pages", function(currentViewDate){
-  return Pages.find();
+Meteor.publish("pages", function(id){
+  return Pages.find({_id: id});
 });
