@@ -19,33 +19,22 @@ Template.page.onRendered(function(){
 
   // save current writing to the database
   function sendHTMLToMongo() {
-    var writing = $(".leaf").html();
+    var words = $(".leaf").html();
     var pageID = Pages.findOne()._id;
-    Meteor.call("saveCurrentWriting", writing, pageID);
+    Meteor.call("saveCurrentWriting", words, pageID);
   }
 
   // when the user is typing, send writing to mongoDB
   function initTypingSaveListener() {
     $( ".leaf" ).keydown(function(e) {
-      if (e.keyCode == 32) {
+      // if a punctation or space, save current writing
+      if (e.keyCode == 32 || e.keyCode == 190 || e.keyCode == 49) {
         sendHTMLToMongo();
       }
     });
   }
 
-  // use noisy plugin to noisify the paper
-  function drawNoisyTextureOnLeaf() {
-    $('.leaf').noisy({
-      intensity: 0.9,
-      size: 200,
-      opacity: 0.08,
-      //fallback: 'fallback.png',
-      monochrome: false
-    });
-  }
-
   loadWriting();
   initTypingSaveListener();
-  drawNoisyTextureOnLeaf();
 
 });

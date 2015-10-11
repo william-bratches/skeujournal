@@ -11,14 +11,14 @@
 .handwriting {
   font-size: 54px;
   font-family: handwriting;
-  text-indent: 2em;
+  text-indent: 0.5em;
   color :#360000;
   padding: 15px 20px;
 
 }
 
 .typewriter {
-  font-size: 14px;
+  font-size: 16px;
   font-family: typewriter;
   text-indent: 0.5em;
   color :#3B3B3B;
@@ -198,5 +198,14 @@ body {
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
   z-index: 50;
+}
 
+.big {
+  position: absolute;
+  font-size: 200%;
+  cursor: pointer; cursor: hand;
+}
+
+.write-mode-button {
+  top: 80px;
 }

@@ -1,5 +1,5 @@
 Meteor.methods({
-  saveCurrentWriting: function(writing, id){
-    Pages.update({_id: id}, {$set: {"text": writing}});
+  saveCurrentWriting: function(words, id){
+    Pages.update({_id: id}, {$set: {"text": words}});
   }
-})
+});

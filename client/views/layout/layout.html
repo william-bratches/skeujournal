@@ -1,3 +1,15 @@
 <template name="layout">
+  <!-- control icons-->
+  <span class="fa fa-fire big" id="fire-button"></span>
+  {{#if typeWriterMode}}
+    <span class="fa fa-pencil big write-mode-button"></span>
+  {{else}}
+    <span class="fa  fa-keyboard-o big write-mode-button"></span>
+  {{/if}}
+
+  <!-- visual FX-->
+  {{#if candleActive}}
+    <span id="candle-light"></span>
+  {{/if}}
     {{> yield}}
 </template>

@@ -7,5 +7,4 @@ Template.write.onCreated(function(){
 Template.write.onRendered(function(){
   var currentViewDate = Template.instance().currentViewDate.get();
   Meteor.subscribe('pages', currentViewDate);
-
-})
+});
