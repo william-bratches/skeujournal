@@ -25,7 +25,7 @@ Template.page.onRendered(function(){
   }
 
   // when the user is typing, send writing to mongoDB
-  function typingSaveListener() {
+  function initTypingSaveListener() {
     $( ".leaf" ).keydown(function(e) {
       if (e.keyCode == 32) {
         sendHTMLToMongo();
@@ -33,7 +33,19 @@ Template.page.onRendered(function(){
     });
   }
 
+  // use noisy plugin to noisify the paper
+  function drawNoisyTextureOnLeaf() {
+    $('.leaf').noisy({
+      intensity: 0.9,
+      size: 200,
+      opacity: 0.08,
+      //fallback: 'fallback.png',
+      monochrome: false
+    });
+  }
+
   loadWriting();
-  typingSaveListener();
+  initTypingSaveListener();
+  drawNoisyTextureOnLeaf();
 
 });

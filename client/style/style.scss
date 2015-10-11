@@ -1,11 +1,163 @@
 .leaf {
-  background-color: #F5E2C6;
+  background-color: #FFF3E0;
   height: 650px;
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
 }
 
+.shadow {
+  -webkit-box-shadow: -3px 5px 3px 1px #A3A3A3;
+  box-shadow:         -3px 5px 3px 1px #A3A3A3;
+}
+
+.leaf:before, .leaf:after {
+  content: "";
+  height: 98%;
+  width: 50%;
+
+  position: absolute;
+  z-index: -1;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.leaf:before {
+  background: #FFEFD6;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-2.5deg);
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.leaf:after {
+  background: #FFEFD6;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  right: -10px;
+  top: 1px;
+  transform: rotate(1.4deg);
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 body {
-  background-color: #696765;
+  background-color: #787269;
+}
+/* Create the animation blocks */
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+@keyframes flicker {
+	from {
+		opacity: 0.1;
+	}
+	4% {
+		opacity: 0.1;
+	}
+	6% {
+		opacity: 0.2;
+	}
+	8% {
+		opacity: 0.15;
+	}
+	10% {
+		opacity: 0.1;
+	}
+	11% {
+		opacity: 0.17;
+	}
+	12% {
+		opacity: 0.1;
+	}
+	14% {
+		opacity: 0.1;
+	}
+	16% {
+		opacity: 0.15;
+	}
+	17% {
+		opacity: 0.1;
+	}
+	19% {
+		opacity: 0.2;
+	}
+	20% {
+		opacity: 0.1;
+	}
+	24% {
+		opacity: 0.1;
+	}
+	26% {
+		opacity: 0.15;
+	}
+	28% {
+		opacity: 0.1;
+	}
+	38% {
+		opacity: 0.2;
+	}
+	40% {
+		opacity: 0.1;
+	}
+	42% {
+		opacity: 0.15;
+	}
+	44% {
+		opacity: 0.2;
+	}
+	46% {
+		opacity: 0.1;
+	}
+	56% {
+		opacity: 0.15;
+	}
+	58% {
+		opacity: 0.1;
+	}
+	60% {
+		opacity: 0.2;
+	}
+	68% {
+		opacity: 0.1;
+	}
+	70% {
+		opacity: .1; /*peak*/
+	}
+	72% {
+		opacity: 0.15;
+	}
+	93% {
+		opacity: 0.2;
+	}
+	95% {
+		opacity: .1; /*peak*/
+	}
+	97% {
+		opacity: 0.1;
+	}
+	to {
+		opacity: 0.15;
+	}
+}
+
+#candle-light {
+  border-radius: 50%;
+  position: absolute;
+  top: -500px;
+  right: -400px;
+	width: 1900px;
+	height: 1900px;
+  opacity: 0.2;
+
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #C47C00 0%, #C47C00 100%, red 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, #C47C00, #C47C00);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, #C47C00 0%, #C47C00 100%, red 95%);
+
+	animation-name: flicker;
+	animation-duration: 6s; /* 3 seconds */
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+
 }
